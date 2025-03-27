@@ -3,7 +3,11 @@
         "name": "Lar Esperança",
         "description": "Oferece abrigo e educação para crianças em situação de vulnerabilidade.",
         "service_hours": "Segunda a Sexta, 08h - 18h",
-        "open_on_weekends": "Sim"
+        "open_on_weekends": "Sim",
+        "position": {
+            "latitude": -3.8277,
+            "longitude": -38.4823
+        }
     },
     "other": {
         "name": "Casa do Amor",

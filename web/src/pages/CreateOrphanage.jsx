@@ -151,8 +151,8 @@ export default function OrphanagesMap() {
       name,
       description,
       location: {
-        latitude: selectedPosition[0] ? selectedPosition[0] : 0,
-        longitude: selectedPosition[1] ? selectedPosition[1] : 0,
+        latitude: localStorage.getItem('hope-qa:latitude'),
+        longitude: localStorage.getItem('hope-qa:longitude'),
       },
       images,
       opening_hours,
@@ -191,7 +191,6 @@ export default function OrphanagesMap() {
     }
     const data = new FormData();
 
-    
 
     data.append("name", name);
     data.append("description", description);
