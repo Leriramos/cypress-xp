@@ -9,11 +9,15 @@
             "longitude": -38.4823
         }
     },
-    "other": {
+    "duplicate": {
         "name": "Casa do Amor",
         "description": "Proporciona assistência psicológica e educacional para menores abandonados.",
         "service_hours": "Segunda a Sábado, 07h - 19h",
-        "open_on_weekends": "Não"
+        "open_on_weekends": "Não",
+        "position": {
+            "latitude": -3.849760674546573,
+            "longitude": -38.5210543870926
+        }
     },
     "other2": {
         "name": "Orfanato Luz",
