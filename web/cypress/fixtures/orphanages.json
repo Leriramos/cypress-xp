@@ -7,7 +7,8 @@
         "position": {
             "latitude": -3.8277,
             "longitude": -38.4823
-        }
+        },
+        "image": "kids-playground-1.png"
     },
     "duplicate": {
         "name": "Casa do Amor",
@@ -17,7 +18,8 @@
         "position": {
             "latitude": -3.849760674546573,
             "longitude": -38.5210543870926
-        }
+        },
+        "image": "kids-playground-3.png"
     },
     "other2": {
         "name": "Orfanato Luz",

@@ -23,3 +23,43 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('setMapPosition', (position) => {
+
+    window.localStorage.setItem('hope-qa:latitude', position.latitude);
+    window.localStorage.setItem('hope-qa:longitude', position.longitude);
+})
+
+//cadastro via API
+Cypress.Commands.add('postOrphanage', (orphanage) => {
+
+    cy.fixture('images/' + orphanage.image, 'binary')
+        .then((image) => Cypress.Blob.binaryStringToBlob(image, 'image/png'))
+        .then((blob) => {
+
+            const formData = new FormData();
+            formData.append('name', orphanage.name);
+            formData.append('description', orphanage.description);
+            formData.append('latitude', orphanage.position.latitude);
+            formData.append('longitude', orphanage.position.longitude);
+            formData.append('opening_hours', orphanage.opening_hours);
+            formData.append('open_on_weekends', false);
+            formData.append('images', blob, orphanage.image);
+
+
+            cy.request({
+                url: 'http://localhost:3333/orphanages',
+                method: 'POST',
+                headers: {
+                    'content-type': 'multipart/form-data'
+                },
+                body: formData,
+                failOnStatusCode: false
+            }).then((response) => {
+                expect(response.status).to.eq(201)
+            });
+
+        })
+
+})
