@@ -21,11 +21,16 @@
         },
         "image": "kids-playground-3.png"
     },
-    "other2": {
+    "map": {
         "name": "Orfanato Luz",
         "description": "Focado no desenvolvimento social e educacional das crianças.",
         "opening_hours": "Segunda a Sexta, 09h - 17h",
-        "open_on_weekends": "Sim"
+        "open_on_weekends": "Sim",
+        "position": {
+            "latitude": -3.840297731908932,
+            "longitude": -38.53000760078431
+        },
+        "image": "kids-playground-4.png"
     },
     "other3": {
         "name": "Abrigo Infantil Aurora",
