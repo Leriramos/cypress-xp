@@ -38,7 +38,13 @@ describe('Cadastro de orfanato', () => {
     });
 
     it('Não deve cadastrar se o campo nome não for preenchido', () => {
+
+        const orphanage = data.required
+
+        cy.visitCreate()
+        cy.createOrphanage(orphanage)
         
+
     })
 });
 
