@@ -32,11 +32,16 @@
         },
         "image": "kids-playground-4.png"
     },
-    "other3": {
+    "required": {
         "name": "Abrigo Infantil Aurora",
         "description": "Acolhimento temporário com apoio psicossocial.",
         "opening_hours": "Todos os dias, 24h",
-        "open_on_weekends": "Não"
+        "open_on_weekends": "Não",
+        "position": {
+            "latitude": -3.8469132390563643,
+            "longitude": -38.5217571258545
+        },
+        "image": "kids-playground-2.png"
     },
     "other4": {
         "name": "Casa dos Pequenos",
