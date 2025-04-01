@@ -28,23 +28,15 @@ describe('Cadastro de orfanato', () => {
 
         cy.postOrphanage(orphanage)
 
-        cy.visitCreate()
-        cy.createOrphanage(orphanage)
+        createPage.go()
+        cy.setMapPosition(orphanage.position)
+        createPage.form(orphanage)
+        createPage.submit()
 
-        cy.popupHaveText('Já existe um cadastro com o nome: ' + orphanage.name)
+        createPage.popup.haveText('Já existe um cadastro com o nome: ' + orphanage.name)
 
 
 
     });
-
-    it('Não deve cadastrar se o campo nome não for preenchido', () => {
-
-        const orphanage = data.required
-
-        cy.visitCreate()
-        cy.createOrphanage(orphanage)
-        
-
-    })
 });
 
