@@ -9,13 +9,11 @@ describe('Cadastro de orfanato', () => {
         const orphanage = data.create
 
         cy.deleteMany({ name: orphanage.name }, { collection: 'orphanages' })
+      
+        cy.visitCreate()
+        cy.createOrphanage(orphanage)
 
-        createPage.go()
-        cy.setMapPosition(orphanage.position)
-        createPage.form(orphanage)
-        createPage.submit()
-
-        mapPage.popup.haveText('Orfanato cadastrado com sucesso.')
+        cy.popupHaveText('Orfanato cadastrado com sucesso.')
 
 
 
@@ -30,15 +28,17 @@ describe('Cadastro de orfanato', () => {
 
         cy.postOrphanage(orphanage)
 
-        createPage.go()
-        cy.setMapPosition(orphanage.position)
-        createPage.form(orphanage)
-        createPage.submit()
+        cy.visitCreate()
+        cy.createOrphanage(orphanage)
 
-        createPage.popup.haveText('Já existe um cadastro com o nome: ' + orphanage.name)
+        cy.popupHaveText('Já existe um cadastro com o nome: ' + orphanage.name)
 
 
 
     });
+
+    it('Não deve cadastrar se o campo nome não for preenchido', () => {
+        
+    })
 });
 

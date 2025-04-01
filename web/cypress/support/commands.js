@@ -24,6 +24,9 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import './views/map'
+import './views/create'
+import './views/components'
 
 Cypress.Commands.add('setMapPosition', (position) => {
 
