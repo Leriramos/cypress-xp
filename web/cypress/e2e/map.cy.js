@@ -14,5 +14,9 @@ describe('mapa', () => {
         cy.contains('h1', orphanage.name)
             .should('be.visible')
 
+        cy.googleMapLink(orphanage.position)
+
+        
     })
 });
+

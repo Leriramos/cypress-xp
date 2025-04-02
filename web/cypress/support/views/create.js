@@ -2,7 +2,7 @@
 
 Cypress.Commands.add('visitCreate', () => {
 
-    cy.visit('http://localhost:3000/orphanages/create')
+    cy.visit('/orphanages/create')
 
     cy.get('legend')
         .should('be.visible')
@@ -14,18 +14,29 @@ Cypress.Commands.add('createOrphanage', (orphanage) => {
 
     cy.setMapPosition(orphanage.position)
 
-    cy.get('input[name=name]')
-        .type(orphanage.name)
+    cy.get('input[name=name]').as('fieldName')
+    cy.get('#description').as('fieldDesc')
+    cy.get('input[type=file]').as('fieldImage')
+    cy.get('#opening_hours').as('fieldOpenHours')
+    
+    orphanage.name ?  
+        cy.get('@fieldName').type(orphanage.name) : 
+        cy.log('Empty field name')
 
-    cy.get('#description').type(orphanage.description)
+    orphanage.description ?
+        cy.get('@fieldDesc').type(orphanage.description) : 
+        cy.log('Empty field description')
 
-    cy.get('input[type=file]').selectFile('cypress/fixtures/images/' + orphanage.image, { force: true })
+    orphanage.image ? 
+        cy.get('@fieldImage').selectFile('cypress/fixtures/images/' + orphanage.image, { force: true }) :
+        cy.log('Empty field image')
+    orphanage.opening_hours ? 
+        cy.get('@fieldOpenHours').type(orphanage.opening_hours) : 
+        cy.log('Empty field openings hours')
 
-    cy.get('#opening_hours').type(orphanage.opening_hours)
+    cy.contains('button', orphanage.open_on_weekends ? "Sim" : "Não").click()
 
-    cy.contains(orphanage.open_on_weekends).click()
-
-    cy.get('.save-button').click()
+    cy.get('.save-button').click({force: true})
 
 
 })
