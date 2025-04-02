@@ -3,12 +3,21 @@ import mapPage from '../support/pages/map'
 
 import data from '../fixtures/orphanages.json'
 
+import {generator} from '../support/factory'
+import { before } from 'underscore';
+
 
 describe('Cadastro de orfanato', () => {
-    it('deve cadastrar um novo orfanato', () => {
-        const orphanage = data.create
 
-        cy.deleteMany({ name: orphanage.name }, { collection: 'orphanages' })
+    before(() => {
+        cy.dropCollection('orphanages')
+    })
+
+    it('deve cadastrar um novo orfanato', () => {
+        const orphanage = generator ()
+
+        cy.log(JSON.stringify(orphanage))
+
       
         cy.visitCreate()
         cy.createOrphanage(orphanage)
@@ -21,9 +30,9 @@ describe('Cadastro de orfanato', () => {
 
         it('não deve cadastrar um orfanato com nome já existente', () => {
 
-            const orphanage = data.duplicate
+            const orphanage = generator ()
     
-            cy.deleteMany({ name: orphanage.name }, { collection: 'orphanages' })
+            
             cy.postOrphanage(orphanage)
     
             createPage.go()
@@ -33,7 +42,7 @@ describe('Cadastro de orfanato', () => {
         });
     
         it('Não deve cadastrar se o nome não for preenchido', () => {
-            let orphanage = data.required
+            let orphanage = generator ()
     
             delete orphanage.name    
     
@@ -45,7 +54,7 @@ describe('Cadastro de orfanato', () => {
         })
     
         it('Não deve cadastrar se o sobre não for preenchido', () => {
-            let orphanage = data.required
+            let orphanage = generator ()
     
             delete orphanage.description
     
@@ -57,7 +66,7 @@ describe('Cadastro de orfanato', () => {
         })
     
         it('Não deve cadastrar se a imagem não for anexada', () => {
-            let orphanage = data.required
+            let orphanage = generator ()
     
             delete orphanage.image
             
@@ -71,7 +80,7 @@ describe('Cadastro de orfanato', () => {
         })
     
         it('Não deve cadastrar se o horário não for informado', () => {
-            let orphanage = data.required
+            let orphanage = generator ()
     
             delete orphanage.opening_hours
     
@@ -84,7 +93,7 @@ describe('Cadastro de orfanato', () => {
         })
     
         it('Não deve cadastrar se os campos obrigatórios não forem preenchidos', () => {
-            let orphanage = data.required
+            let orphanage = generator ()
     
             delete orphanage.name
             delete orphanage.description

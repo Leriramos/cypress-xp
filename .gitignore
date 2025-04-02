@@ -5,3 +5,5 @@ api/src/config/.DS_Store
 .env
 web/package-lock.json
 web/package.json
+web/package.json
+web/package-lock.json
