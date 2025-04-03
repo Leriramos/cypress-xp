@@ -9,9 +9,7 @@ import { before } from 'underscore';
 
 describe('Cadastro de orfanato', () => {
 
-    before(() => {
-        cy.dropCollection('orphanages')
-    })
+    
 
     it('deve cadastrar um novo orfanato', () => {
         const orphanage = generator ()

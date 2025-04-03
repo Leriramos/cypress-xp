@@ -7,3 +7,7 @@ web/package-lock.json
 web/package.json
 web/package.json
 web/package-lock.json
+web/cypress/screenshots/e2e/map.cy.js/mapa -- deve poder escolher um orfanato no mapa (failed).png
+web/allure-results
+web/package-lock.json
+web/package.json
