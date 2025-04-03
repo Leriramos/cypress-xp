@@ -12,6 +12,9 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
+
+import '@mmisty/cypress-allure-adapter/support';
+
 import { addCommands } from 'cypress-mongodb/dist/index-browser';
 addCommands();
 

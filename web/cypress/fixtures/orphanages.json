@@ -3,7 +3,7 @@
         "name": "Lar Esperança",
         "description": "Oferece abrigo e educação para crianças em situação de vulnerabilidade.",
         "opening_hours": "Segunda a Sexta, 08h - 18h",
-        "open_on_weekends": "Sim",
+        "open_on_weekends": true,
         "position": {
             "latitude": -3.8277,
             "longitude": -38.4823
@@ -14,7 +14,7 @@
         "name": "Casa do Amor",
         "description": "Proporciona assistência psicológica e educacional para menores abandonados.",
         "opening_hours": "Segunda a Sábado, 07h - 19h",
-        "open_on_weekends": "Não",
+        "open_on_weekends": false,
         "position": {
             "latitude": -3.849760674546573,
             "longitude": -38.5210543870926
@@ -25,7 +25,7 @@
         "name": "Orfanato Luz",
         "description": "Focado no desenvolvimento social e educacional das crianças.",
         "opening_hours": "Segunda a Sexta, 09h - 17h",
-        "open_on_weekends": "Sim",
+        "open_on_weekends": true,
         "position": {
             "latitude": -3.840297731908932,
             "longitude": -38.53000760078431
@@ -36,7 +36,7 @@
         "name": "Abrigo Infantil Aurora",
         "description": "Acolhimento temporário com apoio psicossocial.",
         "opening_hours": "Todos os dias, 24h",
-        "open_on_weekends": "Não",
+        "open_on_weekends": false,
         "position": {
             "latitude": -3.8469132390563643,
             "longitude": -38.5217571258545
@@ -47,13 +47,13 @@
         "name": "Casa dos Pequenos",
         "description": "Atendimento especializado para crianças com deficiência.",
         "opening_hours": "Segunda a Sexta, 08h - 20h",
-        "open_on_weekends": "Sim"
+        "open_on_weekends": true
     },
     "other5": {
         "name": "Orfanato Vidas",
         "description": "Programa de reintegração familiar e adoção.",
         "opening_hours": "Segunda a Sábado, 10h - 16h",
-        "open_on_weekends": "Sim"
+        "open_on_weekends": true
     },
     "other6": {
         "name": "Orfanato Alegria",
@@ -65,18 +65,18 @@
         "name": "Orfanato Esperança Nova",
         "description": "Apoio à educação e saúde infantil em situação de risco.",
         "opening_hours": "Segunda a Domingo, 06h - 22h",
-        "open_on_weekends": "Não"
+        "open_on_weekends": false
     },
     "other8": {
         "name": "Orfanato Crescer Bem",
         "description": "Foco no desenvolvimento emocional e social das crianças.",
         "opening_hours": "Segunda a Sexta, 08h - 18h",
-        "open_on_weekends": "Sim"
+        "open_on_weekends": true
     },
     "other9": {
         "name": "Orfanato Sonho de Criança",
         "description": "Proporciona assistência completa com moradia e educação.",
         "opening_hours": "Todos os dias, 24h",
-        "open_on_weekends": "Não"
+        "open_on_weekends": false
     }
 }
