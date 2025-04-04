@@ -28,8 +28,8 @@ class CreatePage {
 
     createOrphanage(orphanage) {
         cy.setMapPosition(orphanage.position);
-        this.fillForm(orphanage);
-        this.submit();
+        this.fillForm(orphanage)
+        this.submit()
     }
 }
 
