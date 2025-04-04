@@ -1,7 +1,5 @@
 import { faker } from '@faker-js/faker'
 
-import _ from 'underscore'
-
 const images = [
     'kids-playground-1.png',
     'kids-playground-2.png',
@@ -20,18 +18,16 @@ const images = [
 
 ]
 
-export default {
-    generator: function () {
-        return {
-            name: faker.company.name(),
-            description:  faker.lorem.paragraph(),
-            opening_hours: faker.word.words(3) ,
-            open_on_weekends: true ,
-            position: {
-                latitude: faker.location.latitude(),
-                longitude: faker.location.longitude()
-            },
-            image: _.sample(images)
-        }
-    }
-}
+const generateOrphanage = () => ({
+    name: faker.company.name(),
+    description: faker.lorem.paragraph(),
+    opening_hours: faker.lorem.words(3),
+    open_on_weekends: faker.datatype.boolean(),
+    position: {
+        latitude: Number(faker.location.latitude()),
+        longitude: Number(faker.location.longitude()),
+    },
+    image: images[Math.floor(Math.random() * images.length)],
+});
+
+export default generateOrphanage;
